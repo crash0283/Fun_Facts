@@ -8,7 +8,7 @@ import java.util.Random;
 public class ColorWheel {
 
     //Member variables (properties about the object)
-    public String[] mFacts = {
+    public String[] mColors = {
             "Ants stretch when they wake up in the morning.",
             "Ostriches can run faster than horses.",
             "Olympic gold medals are actually made mostly of silver.",
@@ -29,14 +29,13 @@ public class ColorWheel {
 
         //Randomly select a fact
         Random randomGenerator = new Random(); //Construct a new random number generator
-        int randomNumber = randomGenerator.nextInt(mFacts.length);
+        int randomNumber = randomGenerator.nextInt(mColors.length);
 
-        fact = mFacts[randomNumber];
+        fact = mColors[randomNumber];
 
         return fact;
 
 
-
-
+    }
 
 }
