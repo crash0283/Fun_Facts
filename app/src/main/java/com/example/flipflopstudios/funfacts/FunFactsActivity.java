@@ -13,6 +13,8 @@ import android.widget.TextView;
 public class FunFactsActivity extends Activity {
 
     private FactBook mFactBook = new FactBook();
+    private ColorWheel mColorWheel = new ColorWheel();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +25,16 @@ public class FunFactsActivity extends Activity {
 
         //Declare our view variables and assign them views from layout file
         final TextView factLabel = (TextView) findViewById(R.id.factTextView);
-        Button showFactButton = (Button) findViewById(R.id.showFactButton);
+        final Button showFactButton = (Button) findViewById(R.id.showFactButton);
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 String fact = mFactBook.getFacts();
-                relativeLayout.setBackgroundColor(Color.RED);
+                int color = mColorWheel.getColors();
+
+                relativeLayout.setBackgroundColor(color);
+                showFactButton.setTextColor(color);
 
 
                 //Update label with dynamic fact

@@ -1,5 +1,7 @@
 package com.example.flipflopstudios.funfacts;
 
+import android.graphics.Color;
+
 import java.util.Random;
 
 /**
@@ -25,19 +27,20 @@ public class ColorWheel {
     };
 
     //Method (things the object can do)
-    public String getFacts() {
+    public int getColors() {
 
 
         //The button was clicked so update the fact label with new fact
-        String fact = "";
+        String color = "";
 
         //Randomly select a fact
         Random randomGenerator = new Random(); //Construct a new random number generator
         int randomNumber = randomGenerator.nextInt(mColors.length);
 
-        fact = mColors[randomNumber];
+        color = mColors[randomNumber];
+        int colorAsInt = Color.parseColor(color);
 
-        return fact;
+        return colorAsInt;
 
 
     }
